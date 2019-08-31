@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Brewfest</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu">What are you eating today?</string>
+    <string name="food">Salad :(</string>
+    <string name="strong">Viking Mode</string>
+    <string name="hintText">What are we eating?</string>
+</resources>

@@ -1,0 +1,7 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="topbar">44dp</dimen>
+    <dimen name="progressMargin">30dp</dimen>
+    <dimen name="listPadding">5dp</dimen>
+
+</resources>
