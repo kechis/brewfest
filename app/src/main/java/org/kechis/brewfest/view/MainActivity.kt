@@ -1,15 +1,16 @@
 package org.kechis.brewfest.view
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.Menu
 import android.view.View
+import android.view.ViewGroup
 import android.widget.CheckBox
 import android.widget.EditText
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.kechis.brewfest.R
 import org.kechis.brewfest.data.BrewRepository
@@ -21,12 +22,6 @@ import org.kechis.brewfest.utils.addOnPropertyChanged
 import org.kechis.brewfest.viewmodel.BrewsViewModel
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import android.text.Editable
-import android.text.TextWatcher
-import androidx.core.app.ComponentActivity
-import androidx.core.app.ComponentActivity.ExtraData
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.databinding.DataBindingUtil
 
 
 private const val BASE_URL = "https://api.punkapi.com/v2/"
@@ -92,7 +87,8 @@ class MainActivity : AppCompatActivity(), Handlers {
     override fun onClick(view: View) {
         Log.i(this::class.java.getSimpleName(), "Tapped")
         val layoutInflater = LayoutInflater.from(this@MainActivity)
-        val promptView = layoutInflater.inflate(R.layout.dialog, null)
+        val root = findViewById<ViewGroup>(R.id.container)
+        val promptView = layoutInflater.inflate(R.layout.dialog, root, false)
         val alertDialogBuilder = AlertDialog.Builder(this@MainActivity)
         alertDialogBuilder.setView(promptView)
 

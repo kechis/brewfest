@@ -6,8 +6,7 @@ import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.matcher.ViewMatchers.*
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
-import org.hamcrest.Matchers.containsString
-import org.hamcrest.Matchers.not
+import org.hamcrest.core.StringContains.containsString
 import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
@@ -20,13 +19,6 @@ class MainActivityEspressoTest {
     @Rule
     val testRule = ActivityTestRule<MainActivity>(MainActivity::class.java)
 
-    @Test
-    fun initialViewsDisplayedProperly() {
-        onView(withId(R.id.queryFAB)).check(matches(isDisplayed()))
-        onView(withId(R.id.logo)).check(matches(isDisplayed()))
-        onView(withId(R.id.brewList)).check(matches(not(isDisplayed())))
-
-    }
 
     @Test
     fun textShouldBeUpdateAndImageDisplayedOnButtonClick() {

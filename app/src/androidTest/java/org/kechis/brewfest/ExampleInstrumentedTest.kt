@@ -35,13 +35,13 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().context
-        assertEquals("org.kechis.brewfest", appContext.packageName)
+        assertEquals("org.kechis.brewfest.test", appContext.packageName)
     }
 
     @Test
     @Throws(Exception::class)
     fun testToolbarText() {
-        onView(withText(R.string.app_name)).check(ViewAssertions.matches(withParent(withId(R.id.my_toolbar))))
+        onView(withText(R.string.app_name)).check(ViewAssertions.matches(withParent(withId(R.id.toolbar))))
 
     }
 
